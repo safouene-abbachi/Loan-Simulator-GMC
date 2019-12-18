@@ -1,0 +1,13 @@
+.body {
+    background-color: rgb(41, 35, 54);
+  };
+.td-footer-content {
+    background-repeat: no-repeat;
+    background-position: left -50px bottom 30px;
+    background-size: 383px 342px;
+    padding: 55px 0 55px 0;
+    text-align: center;
+};
+.td-col-xs-12 {
+    width: 100%;
+}
