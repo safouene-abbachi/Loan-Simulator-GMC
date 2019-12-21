@@ -1,25 +1,31 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import "../components/header.css";
+import Login from "../components/login/login";
 
+import "../components/header.css";
 export default class Header extends Component {
   render() {
     return (
-      <Navbar className="nav" fixed="top" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">HOME</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="#pricing">pricing</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#About Us">About Us</Nav.Link>
-        </Nav>
+      <nav className="lol">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Portefolio</a>
+        <a href="#">Contact</a>
 
-        <Button className="btn" variant="outline-success">
-          LOG IN
-        </Button>
-        <Button className="btn" variant="outline-info">
-          Create Account
-        </Button>
-      </Navbar>
+        <div class="animation start-home"></div>
+        <div class="rounded-social-buttons">
+          <a class="social-button facebook" href="#"></a>
+          <a class="social-button twitter" href="#"></a>
+          <a class="social-button linkedin" href="#"></a>
+          <a class="social-button youtube" href="#"></a>
+          <a class="social-button instagram" href="#"></a>
+
+          <a class="social-button google-plus" href="#"></a>
+          <a class="social-button github" href="#"></a>
+        </div>
+
+        {/* <Login /> */}
+      </nav>
     );
   }
 }

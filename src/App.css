@@ -1,0 +1,131 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.nav {
+  height: 90px;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+}
+.btn {
+  width: 180px;
+  margin: 20px;
+}
+.bank-logo {
+  border: 2px solid black;
+  margin: 40px 80px;
+  left: 50%;
+  cursor: pointer;
+}
+table {
+  margin-left: 60px;
+}
+
+.logo {
+  height: 80px;
+  margin-right: 10px;
+}
+.btn-logo-create {
+  margin-right: 10px;
+}
+.btn-logo-log {
+  margin-right: 20px;
+}
+.nav-items {
+  font-size: 20px;
+
+  color: rgb(253, 181, 0) !important;
+}
+.nav-items:hover {
+  color: burlywood !important;
+  transition: all 0.3s ease !important;
+}
+.home-item {
+  font-size: 30px !important;
+}
+.advertising {
+  width: 400px;
+}
+.intro {
+  border-color: rgb(53, 53, 53);
+  border-style: none;
+
+  padding-top: 70px;
+
+  width: 100%;
+  height: 350px;
+  text-align: center;
+
+  color: tomato;
+  font-family: "Open Sans";
+
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-size: 50px;
+  white-space: nowrap;
+}
+
+h3 {
+  color: black;
+  font-family: "Open Sans", arial;
+  font-size: 50px;
+}
+.advantages {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 100px 30px;
+}
+.adv-img {
+  z-index: 500;
+  background-image: url("https://i.pinimg.com/originals/47/92/ae/4792aec9157ebd9af263c383c660d557.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+}
+.middle-section {
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+.slogan {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+  height: 500px;
+  width: 100%;
+}
+
+/* .avantages {
+  display: flex;
+} */
+.img-box {
+  border: 2px solid black;
+  width: 715px;
+}
+.benefits {
+  width: 455px;
+  height: 250px;
+  border: 1px black;
+}
+.adv {
+  text-align: center;
+  padding: 50px;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  width: 100%;
+}
+.adv-parag {
+  font-weight: 300;
+  font-size: 25px;
+  margin: 0;
+  color: gainsboro;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin: 20px 30px;
+}
+h1 {
+  font-family: Impact, Charcoal, sans-serif;
+
+  color: tomato;
+}
