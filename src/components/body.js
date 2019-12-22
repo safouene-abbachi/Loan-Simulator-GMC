@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Carousel from "./carousel/carousel";
+import Card from "../components/cards/card";
 import "./body.scss";
 
 export default class body extends Component {
@@ -7,19 +8,8 @@ export default class body extends Component {
     return (
       <div className="middle-section">
         <div className="adv-img">
-          <p className="intro">
-            {" "}
-            <div class="box">
-              <a
-                target="_blank"
-                href="/simulator.js"
-                class="btn btn-white btn-animation-1"
-              >
-                Hover Over Me
-              </a>
-            </div>
-            {/* <u>SIMULATE YOUR OWN CREDIT</u> */}
-            {/* <table>
+          {/* <p className="intro"> */} {/* <u>SIMULATE YOUR OWN CREDIT</u> */}
+          {/* <table>
               <tbody>
                 <tr>
                   <td>
@@ -77,8 +67,8 @@ export default class body extends Component {
                 </tr>
               </tbody>
             </table> */}
-            {/* <p>With Multiple Bank Rates</p> */}
-          </p>
+          {/* <p>With Multiple Bank Rates</p> */}
+          {/* </p> */}
         </div>
         <div className="adv">
           <h1>SEIZE THE ADVANTAGE</h1>
@@ -89,18 +79,20 @@ export default class body extends Component {
             have a better idea of which particular actions are causing that
             change.
           </p>
+
           <img
             className="slogan2"
             src="https://ck-content.imgix.net/res/content/bundles/homepage/1.12.6/assets/market-iconsx3.png?auto=format,compress&w=600"
           ></img>
         </div>
+        <Carousel />
 
         <div className="avantages">
-          <img
+          {/* <img
             className="slogan"
             src="https://sso.freddiemac.com/lsp_public/assets/youwillget_7.svg"
-          ></img>
-          <div className="img-box">
+          ></img> */}
+          {/* <div className="img-box">
             <img
               className="benefits"
               src="https://www.velocityuc.com/wp-content/uploads/2019/01/shutterstock_151960478.jpg"
@@ -117,11 +109,11 @@ export default class body extends Component {
               className="benefits"
               src="https://jonasdiop.com/wp-content/uploads/2018/09/shortcuts-1.jpg"
             ></img>
-          </div>{" "}
-          */
+          </div>{" "} */}
         </div>
 
-        <Carousel />
+        <Card />
+        <Card />
       </div>
     );
   }

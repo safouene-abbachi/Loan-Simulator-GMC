@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './simulator/simulator.css';
+import './simulator.css';
 import { Grid, Row, Col, Form } from 'react-bootstrap';
 import SliderAmount from './SliderAmount';
 import SliderDuration from './SliderDuration';
