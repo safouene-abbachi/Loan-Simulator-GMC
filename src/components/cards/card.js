@@ -1,58 +1,136 @@
 import React, { Component } from "react";
-import "../cards/card.css";
+import "../cards/card.scss";
 
 export default class Card extends Component {
   render() {
     return (
-      <div>
-        <div class="title">
-          <h1>
-            <span>Tou</span>
-            <span>rist</span> <span>Attr</span>
-            <span>acti</span>
-            <span>ons</span>
-          </h1>
+      <section>
+        <div class="blog-card">
+          <div class="meta">
+            <div
+              class="photo1"
+              // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"
+            ></div>
+            <ul class="details">
+              <li class="author">
+                <a href="#">John Doe</a>
+              </li>
+              <li class="date">Aug. 24, 2015</li>
+              <li class="tags">
+                <ul>
+                  <li>
+                    <a href="#">Learn</a>
+                  </li>
+                  <li>
+                    <a href="#">Code</a>
+                  </li>
+                  <li>
+                    <a href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">CSS</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="description">
+            <h1>Learning to Code</h1>
+            <h2>Opening a door to the future</h2>
+            <p>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+              Neque ad aliquam facilis numquam. Veritatis, sit.
+            </p>
+            <p class="read-more">
+              <a href="#">Read More</a>
+            </p>
+          </div>
         </div>
-        <div class="card1">
-          <img
-            src="http://www.pngmart.com/files/5/Pyramids-PNG-HD.png"
-            alt=""
-          ></img>
-          <h3>Pyramids</h3>
-          <p>
-            The Egyptian pyramids are ancient pyramid-shaped masonry structures
-            located in Egypt. As of November 2008, sources cite either 118 or
-            138 as the number of identified Egyptian pyramids.
-          </p>
+        <div class="blog-card alt">
+          <div class="meta">
+            <div
+              class="photo2"
+              // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"
+            ></div>
+            <ul class="details">
+              <li class="author">
+                <a href="#">Jane Doe</a>
+              </li>
+              <li class="date">July. 15, 2015</li>
+              <li class="tags">
+                <ul>
+                  <li>
+                    <a href="#">Learn</a>
+                  </li>
+                  <li>
+                    <a href="#">Code</a>
+                  </li>
+                  <li>
+                    <a href="#">JavaScript</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="description">
+            <h1>Mastering the Language</h1>
+            <h2>Java is not the same as JavaScript</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+              Neque ad aliquam facilis numquam. Veritatis, sit.
+            </p>
+            <p class="read-more">
+              <a href="#">Read More</a>
+            </p>
+          </div>
         </div>
-
-        <div class="card2">
-          <img
-            src="https://wallazee.global.ssl.fastly.net/images/dynamic/items/383-1024.png"
-            alt="Eiffel Tower"
-          ></img>
-          <h3>Statue of Liberty</h3>
-          <p>
-            The Statue of Liberty is a colossal neoclassical sculpture on
-            Liberty Island in New York Harbor in New York City, in the United
-            States.
-          </p>
+        <div class="blog-card">
+          <div class="meta">
+            <div
+              class="photo3"
+              // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"
+            ></div>
+            <ul class="details">
+              <li class="author">
+                <a href="#">John Doe</a>
+              </li>
+              <li class="date">Aug. 24, 2015</li>
+              <li class="tags">
+                <ul>
+                  <li>
+                    <a href="#">Learn</a>
+                  </li>
+                  <li>
+                    <a href="#">Code</a>
+                  </li>
+                  <li>
+                    <a href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">CSS</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="description">
+            <h1>Learning to Code</h1>
+            <h2>Opening a door to the future</h2>
+            <p>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+              Neque ad aliquam facilis numquam. Veritatis, sit.
+            </p>
+            <p class="read-more">
+              <a href="#">Read More</a>
+            </p>
+          </div>
         </div>
-
-        <div class="card3">
-          <img
-            src="http://pluspng.com/img-png/download-taj-mahal-png-images-transparent-gallery-advertisement-1185.png"
-            alt=""
-          ></img>
-          <h3>Taj Mahal</h3>
-          <p>
-            The Taj Mahal is an ivory-white marble mausoleum on the south bank
-            of the Yamuna river in the Indian city of Agra. It was commissioned
-            in 1632 by the Mughal emperor.
-          </p>
-        </div>
-        <div class="footer"></div>
-      </div>
+      </section>
     );
   }
 }

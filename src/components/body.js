@@ -2,14 +2,35 @@ import React, { Component } from "react";
 import Carousel from "./carousel/carousel";
 import Card from "../components/cards/card";
 import "./body.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "../components/login/login";
 
 export default class body extends Component {
+  state = {
+    modal: false
+  };
+  toggle = () =>
+    this.setState({
+      modal: !this.state.modal
+    });
   render() {
     return (
-      <div className="middle-section">
-        <div className="adv-img">
-          {/* <p className="intro"> */} {/* <u>SIMULATE YOUR OWN CREDIT</u> */}
-          {/* <table>
+      <Router>
+        <div className="middle-section">
+          <div className="adv-img">
+            <div class="container">
+              <Link to="/log">
+                <button onClick={this.toggle} class="skewBtn lorange">
+                  START!
+                </button>
+              </Link>
+            </div>
+            <Switch>
+              <Route exact path="/log" render={() => <Login />} />
+            </Switch>
+            {/* <p className="intro"> */}{" "}
+            {/* <u>SIMULATE YOUR OWN CREDIT</u> */}
+            {/* <table>
               <tbody>
                 <tr>
                   <td>
@@ -67,32 +88,32 @@ export default class body extends Component {
                 </tr>
               </tbody>
             </table> */}
-          {/* <p>With Multiple Bank Rates</p> */}
-          {/* </p> */}
-        </div>
-        <div className="adv">
-          <h1>SEIZE THE ADVANTAGE</h1>
-          <p className="adv-parag">
-            The benefit of the Credit Score Simulator is that it shows you an
-            estimate of how much impact one particular action could have on your
-            credit health. So, when your score changes in the future, you might
-            have a better idea of which particular actions are causing that
-            change.
-          </p>
+            {/* <p>With Multiple Bank Rates</p> */}
+            {/* </p> */}
+          </div>
+          <div className="adv">
+            <h1>SEIZE THE ADVANTAGE</h1>
+            <p className="adv-parag">
+              The benefit of the Credit Score Simulator is that it shows you an
+              estimate of how much impact one particular action could have on
+              your credit health. So, when your score changes in the future, you
+              might have a better idea of which particular actions are causing
+              that change.
+            </p>
 
-          <img
-            className="slogan2"
-            src="https://ck-content.imgix.net/res/content/bundles/homepage/1.12.6/assets/market-iconsx3.png?auto=format,compress&w=600"
-          ></img>
-        </div>
-        <Carousel />
+            <img
+              className="slogan2"
+              src="https://ck-content.imgix.net/res/content/bundles/homepage/1.12.6/assets/market-iconsx3.png?auto=format,compress&w=600"
+            ></img>
+          </div>
+          <Carousel />
 
-        <div className="avantages">
-          {/* <img
+          <div className="avantages">
+            {/* <img
             className="slogan"
             src="https://sso.freddiemac.com/lsp_public/assets/youwillget_7.svg"
           ></img> */}
-          {/* <div className="img-box">
+            {/* <div className="img-box">
             <img
               className="benefits"
               src="https://www.velocityuc.com/wp-content/uploads/2019/01/shutterstock_151960478.jpg"
@@ -110,11 +131,11 @@ export default class body extends Component {
               src="https://jonasdiop.com/wp-content/uploads/2018/09/shortcuts-1.jpg"
             ></img>
           </div>{" "} */}
-        </div>
+          </div>
 
-        <Card />
-        <Card />
-      </div>
+          <Card />
+        </div>
+      </Router>
     );
   }
 }
