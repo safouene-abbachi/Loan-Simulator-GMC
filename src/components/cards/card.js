@@ -11,37 +11,22 @@ export default class Card extends Component {
               class="photo1"
               // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"
             ></div>
-            <ul class="details">
-              <li class="author">
-                <a href="#">John Doe</a>
-              </li>
-              <li class="date">Aug. 24, 2015</li>
-              <li class="tags">
-                <ul>
-                  <li>
-                    <a href="#">Learn</a>
-                  </li>
-                  <li>
-                    <a href="#">Code</a>
-                  </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <ul class="details"></ul>
           </div>
           <div class="description">
-            <h1>Learning to Code</h1>
-            <h2>Opening a door to the future</h2>
+            <h1>Customising Your Loan</h1>
+
             <p>
               {" "}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-              Neque ad aliquam facilis numquam. Veritatis, sit.
+              Using our Interest Rate Loan Calculator, you can determine the
+              full repayment amount on our loans. Simply use the slider on the
+              loan calculator to select the amount of money you wish to borrow
+              then use the next slider to select the number of days you wish to
+              have the loan. Our loan calculator will then calculate interest
+              rates, and in the column on the right, you will see the total loan
+              calculation.
+              {/* The Simple Loan Calculator will determine your estimated payments
+              for different loan amounts, interest rates and terms. */}
             </p>
             <p class="read-more">
               <a href="#">Read More</a>
@@ -54,34 +39,12 @@ export default class Card extends Component {
               class="photo2"
               // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"
             ></div>
-            <ul class="details">
-              <li class="author">
-                <a href="#">Jane Doe</a>
-              </li>
-              <li class="date">July. 15, 2015</li>
-              <li class="tags">
-                <ul>
-                  <li>
-                    <a href="#">Learn</a>
-                  </li>
-                  <li>
-                    <a href="#">Code</a>
-                  </li>
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <ul class="details"></ul>
           </div>
           <div class="description">
-            <h1>Mastering the Language</h1>
-            <h2>Java is not the same as JavaScript</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-              Neque ad aliquam facilis numquam. Veritatis, sit.
-            </p>
+            <h1>Saving Time</h1>
+
+            <p>Get rid of time wasted on useless things</p>
             <p class="read-more">
               <a href="#">Read More</a>
             </p>
@@ -93,38 +56,12 @@ export default class Card extends Component {
               class="photo3"
               // style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"
             ></div>
-            <ul class="details">
-              <li class="author">
-                <a href="#">John Doe</a>
-              </li>
-              <li class="date">Aug. 24, 2015</li>
-              <li class="tags">
-                <ul>
-                  <li>
-                    <a href="#">Learn</a>
-                  </li>
-                  <li>
-                    <a href="#">Code</a>
-                  </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            <ul class="details"></ul>
           </div>
           <div class="description">
-            <h1>Learning to Code</h1>
-            <h2>Opening a door to the future</h2>
-            <p>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-              dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-              Neque ad aliquam facilis numquam. Veritatis, sit.
-            </p>
+            <h1>Paper Work</h1>
+
+            <p> </p>
             <p class="read-more">
               <a href="#">Read More</a>
             </p>
