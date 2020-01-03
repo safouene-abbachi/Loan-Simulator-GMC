@@ -20,15 +20,38 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
+
     Profile.findOne({ user: req.user.id })
+      .populate("user")
       .then(profile => {
         if (!profile) {
+          console.log(profile);
           errors.noprofile = "there is no profile";
           return res.status(404).json(errors);
         }
+
         res.json(profile);
       })
       .catch(err => res.status(404).json(err));
+  }
+);
+
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      if (profile) {
+        return res.status(404).json("this user has already a profile");
+      }
+      const newProfile = new Profile({
+        user: req.user.id
+      });
+      newProfile
+        .save()
+        .then(profile => res.json(profile))
+        .catch(err => console.log(err));
+    });
   }
 );
 

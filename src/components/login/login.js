@@ -11,12 +11,14 @@ class Login extends Component {
     email: "",
     password: ""
   };
+
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  
 
   //sign up
   signup = () => {
     const { name, email, password } = this.state;
-    console.log("name", name);
+
     axios
       .post("/api/users/register", {
         name,
@@ -32,8 +34,9 @@ class Login extends Component {
   signin = () => {
     const { email, password } = this.state;
     axios
-      .post("api/users/login", { email, password })
-      .then(res => localStorage.setItem("token", res.data.token));
+      .post("/api/users/login", { email, password })
+      .then(res => localStorage.setItem("token", res.data.token))
+      .then(res => this.props.history.push(`/log/${this.state.nametoken}`));
   };
 
   configtoken = () => {
@@ -59,52 +62,148 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      // <div className="nav">
+      //   <input
+      //     type="email"
+      //     name="email"
+      //     id=""
+      //     className="edit-button"
+      //     placeholder="email"
+      //     onChange={this.handleChange}
+      //   />
+      //   <input
+      //     type="password"
+      //     name="password"
+      //     id=""
+      //     className="edit-button"
+      //     placeholder="password"
+      //     onChange={this.handleChange}
+      //   />
+      //   <input
+      //     type="button"
+      //     value="sign in"
+      //     className="button"
+      //     onClick={this.signin}
+      //   />
+      //   <hr />
+      //   <input
+      //     type="text"
+      //     name="name"
+      //     id=""
+      //     className="edit-button"
+      //     placeholder="name"
+      //     onChange={this.handleChange}
+      //   />
+      //   <input
+      //     type="email"
+      //     name="email"
+      //     id=""
+      //     className="edit-button"
+      //     placeholder="email"
+      //     onChange={this.handleChange}
+      //   />
+      //   <input
+      //     type="password"
+      //     name="password"
+      //     id=""
+      //     className="edit-button"
+      //     placeholder="password"
+      //     onChange={this.handleChange}
+      //   />
+      //   <input
+      //     type="button"
+      //     value="sign up"
+      //     className="button"
+      //     onClick={this.signup}
+      //   />
+      //   <hr />
+      //   <p>{this.state.nametoken}</p>
+      //   <input
+      //     type="button"
+      //     value="Logout"
+      //     className="button"
+      //     onClick={() => localStorage.removeItem("token")}
+      //   />
+      // </div>
+      <div className="access">
         <div class="body"></div>
         <div class="grad"></div>
         <div class="header">
-          <div>
+          <div className="brand">
             Loan<span>Simulator </span>
           </div>
         </div>
         <br />
 
         <div class="login">
-          <p>{this.state.nametoken}</p>
-          <input
-            type="text"
-            name="email"
-            className="edit-button"
-            placeholder="email"
-            onChange={this.handleChange}
-          />
-
-          <br />
-
-          <input
-            type="password"
-            name="password"
-            className="edit-button"
-            placeholder="password"
-            onChange={this.handleChange}
-          />
-          <br />
-          <Link className="link" to={`/logged/${this.state.nametoken}`}>
+          <div>
+            <p>{this.state.nametoken}</p>
             <input
-              type="button"
-              value="Login"
-              className="button"
-              onClick={this.signin}
+              type="text"
+              name="email"
+              className="edit-button"
+              placeholder="email"
+              onChange={this.handleChange}
             />
-          </Link>
 
-          <input
+            <br />
+
+            <input
+              type="password"
+              name="password"
+              className="edit-button"
+              placeholder="password"
+              onChange={this.handleChange}
+            />
+            <br />
+            <Link className="link" to={`/log/${this.state.nametoken}`}>
+              <input
+                type="button"
+                value="Login"
+                className="button"
+                onClick={this.signin}
+              />
+            </Link>
+          </div>
+
+          {/* <input
             type="button"
             value="Logout"
             className="button"
             onClick={() => localStorage.removeItem("token")}
-          />
-          {/* <input type="button" value="Login"></input> */}
+          /> */}
+          <div className="sign-up">
+            <input
+              type="text"
+              name="name"
+              id=""
+              className="edit-button"
+              placeholder="name"
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="email"
+              id=""
+              className="edit-button"
+              placeholder="email"
+              onChange={this.handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              id=""
+              className="edit-button"
+              placeholder="password"
+              onChange={this.handleChange}
+            />
+            <input
+              type="button"
+              value="sign up"
+              className="button"
+              onClick={this.signup}
+            />
+          </div>
         </div>
       </div>
     );
