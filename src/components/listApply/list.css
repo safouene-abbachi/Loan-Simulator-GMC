@@ -1,0 +1,12 @@
+.apply {
+  display: flex !important;
+  justify-content: space-evenly;
+}
+.card-title,
+.card-subtitle,
+.card-text {
+  text-align: center;
+}
+.card {
+  width: 260px;
+}

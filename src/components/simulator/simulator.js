@@ -4,6 +4,7 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 import SliderAmount from "./SliderAmount";
 import SliderDuration from "./SliderDuration";
 import RightSide from "./RightSide";
+import Axios from "axios";
 
 class Simulator extends Component {
   constructor(props) {
@@ -77,6 +78,17 @@ class Simulator extends Component {
 
     this.calculate(changedID, value);
   };
+
+  sendSimulation() {
+    const { monthlyInst, amountToR, APR } = this.state;
+    Axios.post("/api/application/apply", {
+      monthlyInstalement: monthlyInst,
+      totalAmount: amountToR,
+      rate: APR
+    })
+      .then(res => console.log(""))
+      .catch(err => console.log(err));
+  }
 
   // CALCULATE FUNCTION
 
@@ -159,15 +171,24 @@ class Simulator extends Component {
             />
           </Form>
           <Button
-            onClick={() =>
+            onClick={() => {
               this.setState({
                 amountToRepay: this.state.amountToR,
                 monthlyIn: this.state.monthlyInst
-              })
-            }
+              });
+              this.sendSimulation();
+            }}
           >
             SIMULATE !
           </Button>
+          <Button>Send Request </Button>
+          <input
+            type="button"
+            value="Logout"
+            className="button"
+            onClick={() => localStorage.removeItem("token")}
+          />
+
           <Col className="logo" sm={12}></Col>
         </Col>
 

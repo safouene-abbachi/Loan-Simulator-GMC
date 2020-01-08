@@ -6,8 +6,8 @@ import Footer from "./components/footer/footer";
 import Login from "./components/login/login";
 import { PrivateRoute } from "./components/privateRoute";
 import "./App.css";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import List from "./components/listApply/list";
 
 function App() {
   return (
@@ -18,11 +18,8 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <Body />} />
           <Route exact path="/log" render={() => <Login />} />
-          <PrivateRoute
-            exact
-            path="/log/:nametoken"
-            component={<Simulator />}
-          />
+          <PrivateRoute exact path="/simulator" component={Simulator} />
+          <PrivateRoute exact isAdmin path="/admin" component={List} />
         </Switch>
       </div>
       {/* <Footer /> */}

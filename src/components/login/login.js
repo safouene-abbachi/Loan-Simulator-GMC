@@ -9,11 +9,11 @@ class Login extends Component {
     nametoken: "",
     name: "",
     email: "",
+    role: "",
     password: ""
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
-  
 
   //sign up
   signup = () => {
@@ -35,8 +35,15 @@ class Login extends Component {
     const { email, password } = this.state;
     axios
       .post("/api/users/login", { email, password })
-      .then(res => localStorage.setItem("token", res.data.token))
-      .then(res => this.props.history.push(`/log/${this.state.nametoken}`));
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+        this.setState({ ...this.state, role: res.data.role });
+      })
+      .then(res =>
+        this.props.history.push(
+          this.state.role === "admin" ? `/admin` : `/simulator`
+        )
+      );
   };
 
   configtoken = () => {
@@ -62,69 +69,6 @@ class Login extends Component {
 
   render() {
     return (
-      // <div className="nav">
-      //   <input
-      //     type="email"
-      //     name="email"
-      //     id=""
-      //     className="edit-button"
-      //     placeholder="email"
-      //     onChange={this.handleChange}
-      //   />
-      //   <input
-      //     type="password"
-      //     name="password"
-      //     id=""
-      //     className="edit-button"
-      //     placeholder="password"
-      //     onChange={this.handleChange}
-      //   />
-      //   <input
-      //     type="button"
-      //     value="sign in"
-      //     className="button"
-      //     onClick={this.signin}
-      //   />
-      //   <hr />
-      //   <input
-      //     type="text"
-      //     name="name"
-      //     id=""
-      //     className="edit-button"
-      //     placeholder="name"
-      //     onChange={this.handleChange}
-      //   />
-      //   <input
-      //     type="email"
-      //     name="email"
-      //     id=""
-      //     className="edit-button"
-      //     placeholder="email"
-      //     onChange={this.handleChange}
-      //   />
-      //   <input
-      //     type="password"
-      //     name="password"
-      //     id=""
-      //     className="edit-button"
-      //     placeholder="password"
-      //     onChange={this.handleChange}
-      //   />
-      //   <input
-      //     type="button"
-      //     value="sign up"
-      //     className="button"
-      //     onClick={this.signup}
-      //   />
-      //   <hr />
-      //   <p>{this.state.nametoken}</p>
-      //   <input
-      //     type="button"
-      //     value="Logout"
-      //     className="button"
-      //     onClick={() => localStorage.removeItem("token")}
-      //   />
-      // </div>
       <div className="access">
         <div class="body"></div>
         <div class="grad"></div>
@@ -156,22 +100,15 @@ class Login extends Component {
               onChange={this.handleChange}
             />
             <br />
-            <Link className="link" to={`/log/${this.state.nametoken}`}>
-              <input
-                type="button"
-                value="Login"
-                className="button"
-                onClick={this.signin}
-              />
-            </Link>
+
+            <input
+              type="button"
+              value="Login"
+              className="button"
+              onClick={this.signin}
+            />
           </div>
 
-          {/* <input
-            type="button"
-            value="Logout"
-            className="button"
-            onClick={() => localStorage.removeItem("token")}
-          /> */}
           <div className="sign-up">
             <input
               type="text"

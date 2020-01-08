@@ -44,7 +44,12 @@ export default class Card extends Component {
           <div class="description">
             <h1>Saving Time</h1>
 
-            <p>Get rid of time wasted on useless things</p>
+            <p>
+              Get rid of time wasted on useless things .Simply put, we can spend
+              more hours on outdoor activities and less time indoors. This tends
+              to increase exercise and decrease depression. So daylight saving
+              time may make us happier and healthier.
+            </p>
             <p class="read-more">
               <a href="#">Read More</a>
             </p>
@@ -61,7 +66,14 @@ export default class Card extends Component {
           <div class="description">
             <h1>Paper Work</h1>
 
-            <p> </p>
+            <p>
+              {" "}
+              Since electronic forms are easier to fill out than paper, response
+              rates normally improve. Adding questions and editing information
+              can be done quickly and easily. Forms are made secure through use
+              of password protection and encryption. Data is stored on secure
+              servers
+            </p>
             <p class="read-more">
               <a href="#">Read More</a>
             </p>

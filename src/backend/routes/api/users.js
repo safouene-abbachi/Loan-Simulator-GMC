@@ -43,7 +43,8 @@ router.post("/register", (req, res) => {
         name: req.body.name,
         email: req.body.email,
         avatar,
-        password: req.body.password
+        password: req.body.password,
+        role: req.body.role
       });
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -83,7 +84,12 @@ router.post("/login", (req, res, next) => {
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         //user matched
-        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create jwt payload
+        const payload = {
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar,
+          role: user.role
+        }; // Create jwt payload
 
         //sign token
         jwt.sign(
@@ -93,7 +99,8 @@ router.post("/login", (req, res, next) => {
           (err, token) => {
             res.json({
               success: true,
-              token: "Bearer " + token
+              token: "Bearer " + token,
+              role: user.role
             });
           }
         );
@@ -116,7 +123,8 @@ router.get(
     res.json({
       id: req.user.id,
       name: req.user.name,
-      email: req.user.email
+      email: req.user.email,
+      role: req.user.role,
     });
   }
 );

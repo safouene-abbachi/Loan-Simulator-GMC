@@ -1,7 +1,3 @@
-/* body {
-  background-image: url("https://cdn.pixabay.com/photo/2016/04/20/08/21/entrepreneur-1340649_960_720.jpg");
-} */
-
 .mainContainer {
   margin-top: 50px;
   background-color: #f3f3f3;
@@ -20,12 +16,12 @@
 }
 .labelSlider {
   text-align: center;
-  background-color: #4268f4;
+
   padding: 6px 12px;
   border-radius: 5px;
-  color: #f3f3f3;
+  color: cornflowerblue;
   min-width: 120px;
-  font-size: 20px;
+  font-size: 35px;
   margin-bottom: 30px;
   transition: all 1s;
   margin-left: auto;
