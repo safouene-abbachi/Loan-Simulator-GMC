@@ -10,7 +10,8 @@ class Login extends Component {
     name: "",
     email: "",
     role: "",
-    password: ""
+    password: "",
+    bankname: ""
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -32,9 +33,9 @@ class Login extends Component {
   };
 
   signin = () => {
-    const { email, password } = this.state;
+    const { email, password, bankname } = this.state;
     axios
-      .post("/api/users/login", { email, password })
+      .post("/api/users/login", { email, password, bankname })
       .then(res => {
         localStorage.setItem("token", res.data.token);
         this.setState({ ...this.state, role: res.data.role });
@@ -63,7 +64,7 @@ class Login extends Component {
   componentDidMount() {
     axios.get("/api/users/current", this.configtoken()).then(res => {
       console.log(res.data);
-      this.setState({ nametoken: res.data.name });
+      this.setState({ currentUser: res.data });
     });
   }
 
@@ -81,7 +82,6 @@ class Login extends Component {
 
         <div class="login">
           <div>
-            <p>{this.state.nametoken}</p>
             <input
               type="text"
               name="email"
@@ -97,6 +97,13 @@ class Login extends Component {
               name="password"
               className="edit-button"
               placeholder="password"
+              onChange={this.handleChange}
+            />
+            <input
+              type="name"
+              name="name"
+              className="edit-button"
+              placeholder="institution name "
               onChange={this.handleChange}
             />
             <br />

@@ -12,7 +12,7 @@ export default class List extends Component {
       .catch(err => console.log(err));
   };
 
-  configtoken = () => {
+  configToken() {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
@@ -24,13 +24,33 @@ export default class List extends Component {
     }
 
     return config;
-  };
+  }
+
+  sendMail(request) {
+    const token = this.configToken();
+    const userMailOptions = {
+      to: request.usermail,
+      text: `Dear ${request.username},
+
+Congratulations, the request you applied for on ${request.date} has been approved.
+
+Kind Regards,
+Safouene Abbachi`
+    };
+    axios
+      .post(
+        "http://localhost:5000/api/application/sendmail",
+        userMailOptions,
+        token
+      )
+      .then(() => console.log("Mail is sent successfully"));
+  }
 
   getApplication = () => {
     axios
       .get(
         "http://localhost:5000/api/application/getApplications",
-        this.configtoken()
+        this.configToken()
       )
       .then(res =>
         this.setState({
@@ -38,9 +58,16 @@ export default class List extends Component {
         })
       );
   };
+
   componentDidMount() {
     this.getApplication();
   }
+
+  getcurrentUser = () => {
+    axios.get("/api/users/current", this.configtoken()).then(res => {
+      console.log(res.data);
+    });
+  };
   render() {
     return (
       <div className="apply">
@@ -50,11 +77,21 @@ export default class List extends Component {
               <h5 class="card-title">
                 Total Amount To Repay {el.totalAmount} DT
               </h5>
+              <h5 class="card-title">{el.username} </h5>
+              <h5 class="card-title">{el.usermail} </h5>
               <h6 class="card-subtitle mb-2 text-muted">
                 Monthly Instalement : {el.monthlyInstalement} DT
               </h6>
-              <p class="card-text">Rate : {el.rate}</p>
-              <button type="button" class="btn btn-success">
+              <p class="card-text">
+                Rate : {el.rate} from {el.bankname}{" "}
+              </p>
+              <button
+                type="button"
+                class="btn btn-success"
+                onClick={() => {
+                  this.sendMail(el);
+                }}
+              >
                 Approve
               </button>
               <button

@@ -11,19 +11,19 @@ import List from "./components/listApply/list";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         {/* <Simulator /> */}
-        <Header />
+
         <Switch>
           <Route exact path="/" render={() => <Body />} />
           <Route exact path="/log" render={() => <Login />} />
           <PrivateRoute exact path="/simulator" component={Simulator} />
           <PrivateRoute exact isAdmin path="/admin" component={List} />
         </Switch>
-      </div>
-      {/* <Footer /> */}
-    </Router>
+        {/* <Footer /> */}
+      </Router>
+    </div>
   );
 }
 

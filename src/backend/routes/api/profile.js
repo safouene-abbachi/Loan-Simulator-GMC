@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const passport = require("passport");
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
 //load profile
 const Profile = require("../models/profile");
 //load user profile
-const User = require("../models/User");
+// const User = require("../models/User");
 
 router.get("/test", (req, res) => res.json({ msg: "profile works" }));
 
@@ -25,7 +25,7 @@ router.get(
       .populate("user")
       .then(profile => {
         if (!profile) {
-          console.log(profile);
+          // console.log(profile);
           errors.noprofile = "there is no profile";
           return res.status(404).json(errors);
         }

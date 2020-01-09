@@ -2,17 +2,43 @@ const express = require("express");
 
 const Application = require("../models/application");
 const passport = require("passport");
-
+const nodemailer = require("nodemailer");
 const router = express.Router();
+
+// Mail sending config
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "abbachisafouene@gmail.com",
+    pass: "284682Pipo"
+  }
+});
+
+const defaultMailOptions = {
+  from: "abbachisafouene@gmail.com",
+  subject: "Loan Request",
+  text: `
+  your request is being processed. You will receive a mail as soon as your request is approved.`
+};
 
 router.get("/test", (req, res) => res.json({ msg: "application works" }));
 
 router.post("/apply", (req, res) => {
-  const { totalAmount, monthlyInstalement, rate } = req.body;
+  const {
+    totalAmount,
+    monthlyInstalement,
+    rate,
+    username,
+    usermail,
+    bankname
+  } = req.body;
   const newApplication = new Application({
     totalAmount,
     monthlyInstalement,
-    rate
+    rate,
+    username,
+    usermail,
+    bankname
   });
   newApplication
     .save()
@@ -36,5 +62,16 @@ router.delete("/getApplications/:_id", (req, res) => {
   Application.findOneAndDelete({ _id })
     .then(application => res.send(application))
     .catch(err => res.send("error"));
+});
+
+router.post("/sendmail", (req, res) => {
+  const mailOptions = { ...defaultMailOptions, ...req.body };
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
 });
 module.exports = router;

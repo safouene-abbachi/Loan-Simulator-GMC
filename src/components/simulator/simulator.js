@@ -81,13 +81,21 @@ class Simulator extends Component {
 
   sendSimulation() {
     const { monthlyInst, amountToR, APR } = this.state;
-    Axios.post("/api/application/apply", {
-      monthlyInstalement: monthlyInst,
-      totalAmount: amountToR,
-      rate: APR
-    })
-      .then(res => console.log(""))
-      .catch(err => console.log(err));
+    const token = this.configToken();
+    Axios.get("http://localhost:5000/api/users/current", token).then(
+      currentUser => {
+        Axios.post("/api/application/apply", {
+          monthlyInstalement: monthlyInst,
+          totalAmount: amountToR,
+          rate: APR,
+          username: currentUser.data.name,
+          usermail: currentUser.data.email,
+          bankname:currentUser.data.bankname
+        })
+          .then(res => console.log(""))
+          .catch(err => console.log(err));
+      }
+    );
   }
 
   // CALCULATE FUNCTION
@@ -148,6 +156,50 @@ class Simulator extends Component {
     this.setState({ monthlyInst: monthly });
   }
 
+  configToken() {
+    const token = localStorage.getItem("token");
+    const config = {
+      headers: {
+        "Content-type": "application/json"
+      }
+    };
+    if (token) {
+      config.headers["Authorization"] = token;
+    }
+
+    return config;
+  }
+
+  sendMail() {
+    const token = this.configToken();
+    Axios.get("http://localhost:5000/api/users/current", token).then(
+      currentUser => {
+        // mail to user
+        const userMailOptions = {
+          to: currentUser.data.email
+        };
+        Axios.post(
+          "http://localhost:5000/api/application/sendmail",
+          userMailOptions,
+          token
+        ).then(() => console.log("Mail is sent successfully"));
+
+        // mail to banker
+        const bankerMailOptions = {
+          to: "sky.bader@gmail.com",
+          text: `A request has been sent by the user ${currentUser.data.name} applying for a ${this.state.amountToR} TND loan with a monthly instalment of ${this.state.monthlyInst} TND at a rate of ${this.state.APR}% . Please consider his demand.
+        
+Kind regards,`
+        };
+        Axios.post(
+          "http://localhost:5000/api/application/sendmail",
+          bankerMailOptions,
+          token
+        ).then(() => console.log("Mail is sent successfully"));
+      }
+    );
+  }
+
   render() {
     console.log(this.state.monthlyInst);
     return (
@@ -181,12 +233,21 @@ class Simulator extends Component {
           >
             SIMULATE !
           </Button>
-          <Button>Send Request </Button>
+          <Button
+            onClick={() => {
+              this.sendMail();
+            }}
+          >
+            Send Request{" "}
+          </Button>
           <input
             type="button"
             value="Logout"
             className="button"
-            onClick={() => localStorage.removeItem("token")}
+            onClick={() => {
+              localStorage.removeItem("token");
+              this.props.history.push("/log");
+            }}
           />
 
           <Col className="logo" sm={12}></Col>

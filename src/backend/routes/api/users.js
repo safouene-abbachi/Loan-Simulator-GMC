@@ -71,6 +71,7 @@ router.post("/login", (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
+
   const email = req.body.email;
   const password = req.body.password;
   //find the user by email
@@ -124,7 +125,7 @@ router.get(
       id: req.user.id,
       name: req.user.name,
       email: req.user.email,
-      role: req.user.role,
+      role: req.user.role
     });
   }
 );
