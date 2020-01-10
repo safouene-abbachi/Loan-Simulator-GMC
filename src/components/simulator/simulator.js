@@ -90,7 +90,7 @@ class Simulator extends Component {
           rate: APR,
           username: currentUser.data.name,
           usermail: currentUser.data.email,
-          bankname:currentUser.data.bankname
+          bankname: currentUser.data.bankname
         })
           .then(res => console.log(""))
           .catch(err => console.log(err));
@@ -298,7 +298,7 @@ Simulator.defaultProps = {
   APR1: 3.3,
   APR2: 9.6,
   APR3: 7.25,
-  APR4: 20.2,
+  APR4: 6.2,
 
   currancy: "DT"
 };

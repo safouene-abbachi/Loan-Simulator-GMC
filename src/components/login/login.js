@@ -74,9 +74,11 @@ class Login extends Component {
         <div class="body"></div>
         <div class="grad"></div>
         <div class="header">
-          <div className="brand">
-            Loan<span>Simulator </span>
-          </div>
+          <Link to="/">
+            <div className="brand">
+              Loan<span>Simulator </span>
+            </div>
+          </Link>
         </div>
         <br />
 
@@ -99,13 +101,7 @@ class Login extends Component {
               placeholder="password"
               onChange={this.handleChange}
             />
-            <input
-              type="name"
-              name="name"
-              className="edit-button"
-              placeholder="institution name "
-              onChange={this.handleChange}
-            />
+
             <br />
 
             <input

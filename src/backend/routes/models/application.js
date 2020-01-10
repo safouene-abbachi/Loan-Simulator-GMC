@@ -28,9 +28,7 @@ const ApplicationSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  bankname: {
-    type: String
-  }
+  
 });
 
 module.exports = Application = mongoose.model("application", ApplicationSchema);

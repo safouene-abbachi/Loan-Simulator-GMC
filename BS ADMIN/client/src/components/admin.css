@@ -1,0 +1,124 @@
+th {
+    color: deepskyblue;
+    font-weight: bold;
+  }
+
+  tr th {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  tr td:hover {
+    color: #fa3380;
+  }
+  
+  .myTable,
+  .table th,
+  .table td {
+    text-align: center;
+  }
+
+  .table td{
+      /* color:#333; */
+      font-weight: bold;
+      color:grey
+      
+  }
+
+  .fa-pencil-alt:hover{
+    opacity: 0.5;
+  }
+
+  .deleteb {
+
+  padding: 10px 20px 10px 20px;
+  border-radius: 100px;
+  color: black;
+    transition: 0.5s linear;
+  outline: none;
+
+  font-size: 18px
+  }
+  .deleteb:hover {
+    background: darkred;
+  }
+
+  
+.editb {
+    border-radius: 50%;
+    padding: 10px 20px 10px 20px;
+    outline: none;
+
+
+    color: black;
+    transition: 0.5s linear;
+    font-size: 18px;
+
+  }
+
+  .editb:hover {
+    background: darkgreen;
+  }
+
+
+
+
+  .logo {
+    font: 84px 'Arial Narrow', sans-serif;
+    color: #fefefe;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    font-size: 40px;
+  }
+  
+  
+  
+  /* stuff for both words */
+  .logo span {
+    position: relative;
+  }
+  .logo span:before,
+  .logo span:after {
+    content: '';
+    position: absolute;
+    border-width: 32px;/* makes a nice, big 64px square */
+    border-style: solid;
+    border-color: transparent;
+    height: 0;
+    z-index: 10;
+  }
+  
+  /* stuff for 1st word */
+  .logo .word1 {
+    color: #dc006c;
+    margin-right: -10px;
+    transform: rotateY(180deg);/* using Prefix free */
+    display: inline-block;/* required for transform */
+    z-index: 10;/* stack 1st word on top */
+  }
+  .logo .word1:before {
+    right: -4px;/* would be left, but we flipped the word */
+    top: -9px;
+  }
+  .logo .word1:after {
+    left: 17px;/* would be right, but we flipped the word */
+    bottom: -15px;
+  }
+  
+  /* stuff for 2nd word */
+  .logo .word2 {
+    z-index: 0;/* stack 2nd word below */
+  }
+  .logo .word2:before {
+    left: -4px;
+    top: -6px;
+  
+  }
+  .logo .word2:after {
+    right: -4px;  
+    bottom: 4px;
+    
+  
+  }
+  
+ 

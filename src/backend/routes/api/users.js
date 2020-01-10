@@ -74,6 +74,7 @@ router.post("/login", (req, res, next) => {
 
   const email = req.body.email;
   const password = req.body.password;
+  const bankname = req.body.bankname;
   //find the user by email
   User.findOne({ email }).then(user => {
     //check for user
@@ -89,7 +90,8 @@ router.post("/login", (req, res, next) => {
           id: user.id,
           name: user.name,
           avatar: user.avatar,
-          role: user.role
+          role: user.role,
+          bankname: user.bankname
         }; // Create jwt payload
 
         //sign token
@@ -125,7 +127,8 @@ router.get(
       id: req.user.id,
       name: req.user.name,
       email: req.user.email,
-      role: req.user.role
+      role: req.user.role,
+      bankname: req.user.bankname
     });
   }
 );
