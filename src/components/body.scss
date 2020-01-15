@@ -38,7 +38,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(https://i.pinimg.com/originals/47/92/ae/4792aec9157ebd9af263c383c660d557.jpg);
+
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,4 +110,50 @@ h3 {
   .item {
     max-width: 1361px;
   }
+}
+
+// scss button  style
+
+$l_orange: #fbc02d;
+
+@mixin buttonBG($bg) {
+  border: 2px solid $bg;
+  color: $bg;
+  &:hover {
+    background-color: $bg;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 47vh;
+  .skewBtn {
+    margin: 112px -59px;
+    width: 252px;
+    height: 86px;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.5s;
+    font-size: 25px;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+    &:hover {
+      border: none;
+      color: white;
+      font-size: 40px;
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Buttons */
+
+.lorange {
+  @include buttonBG($l_orange);
 }

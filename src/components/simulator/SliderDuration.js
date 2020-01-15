@@ -13,7 +13,7 @@ class SliderDuration extends Component {
                                 Duration
                             </Col>
                             <Col className="descSlider" sm={6}>
-                                For how long would you like t borrow?
+                                For how long would you like to borrow?
                             </Col>
                         </Row>
                     </Col>

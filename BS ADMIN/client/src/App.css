@@ -1,0 +1,58 @@
+.login{
+ min-height: 100vh;
+  margin: 0;
+  background-image: url('https://images.unsplash.com/photo-1549045105-bb8e7539a736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+  background-size: cover;
+      
+
+}
+
+.myForm{
+ background-color: rgba(0,0,0,0.5) !important;
+ min-width: 80vh !important;
+ padding: 15px 5vh !important;
+border-radius: 15px !important;
+color: white;
+/* margin-bottom: 500px !important;  */
+margin-top: 20% !important;
+
+
+}
+
+.inputLogin{
+ border-radius:0 15px 15px 0 !important;
+
+}
+.inputLogin:focus{
+   outline: none;
+box-shadow:none !important;
+border:1px solid #ccc !important;
+
+}
+
+.br-15{
+ border-radius: 15px 0 0 15px !important;
+
+}
+
+#add_more{
+ color: white !important;
+ background-color: #fa8231 !important;
+ border-radius: 15px !important;
+ border: 0 !important;
+
+}
+#remove_more{
+ color: white !important;
+ background-color: #fc5c65 !important;
+ border-radius: 15px !important;
+ border: 0 !important;
+ display: none;
+
+}
+ 
+.submit_btn{
+ border-radius: 15px !important;
+background-color: #95c714 !important;
+border: 0 !important;
+}
