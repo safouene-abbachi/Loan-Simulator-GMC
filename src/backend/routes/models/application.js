@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 //Create Schema
 
 const ApplicationSchema = new Schema({
+  valueAmount: {
+    type: Number,
+    required: true
+  },
   totalAmount: {
     type: Number,
     required: true
@@ -27,8 +31,7 @@ const ApplicationSchema = new Schema({
   date: {
     type: Date,
     default: Date.now()
-  },
-  
+  }
 });
 
 module.exports = Application = mongoose.model("application", ApplicationSchema);

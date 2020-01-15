@@ -1,107 +1,120 @@
-// import React, { Component } from "react";
-// import "./footer.css";
+import React, { Component } from "react";
+import "./footer.css";
 
-// export default class Footer extends Component {
-//   render() {
-//     return (
-//       <footer>
-//     <div class="container">
-//         <div class="footer-top">
-//             <div class="row">
-//                 <div class="col-md-6 col-lg-3 about-footer">
-//                     <h3>Lorem Ipsum dummy text </h3>
-//                     <ul>
-//                         <li><a href="tel:(010) 1234 4321"><i class="fas fa-phone fa-flip-horizontal"></i>(010) 1234 4321</a></li>
-//                         <li><i class="fas fa-map-marker-alt"></i>
-//                             1 / 105 Bay Lights,
-//                             <br/>Lorem Ipsum,
-//                             <br/>LIC 3201
-//                         </li>
-//                     </ul>
-//                     <a href="" class="btn red-btn">Book Now</a>
-//                 </div>
-//                 <div class="col-md-6 col-lg-2 page-more-info">
-//                     <div class="footer-title">
-//                         <h4>Page links</h4>
-//                     </div>
-//                     <ul>
-//                         <li><a href="#">Home</a></li>
-//                         <li><a href="#">About</a></li>
-//                         <li><a href="#">Testimonial</a></li>
-//                         <li><a href="#">Blog</a></li>
-//                         <li><a href="#">Contact</a></li>
-//                     </ul>
-//                 </div>
+export default class Footer extends Component {
+  render() {
+    return (
+      <footer>
+        <div class="footer-info">
+          <section class="social">
+            <p class="intro-social">
+              Wistia creates video software for growing businesses.
+            </p>
+            <p className="social-links">
+              Follow us:
+              <a
+                className="facebook"
+                href="https://web.archive.org/web/20190830151841/https://www.facebook.com/wistia"
+              >
+                Facebook
+              </a>
+              ,
+              <a
+                className="facebook"
+                href="https://web.archive.org/web/20190726000449/https://www.linkedin.com/company/wistia"
+              >
+                LinkedIn
+              </a>
+              ,
+              <a
+                className="facebook"
+                href="https://web.archive.org/web/20190614235836/https://www.twitter.com/wistia"
+              >
+                Twitter
+              </a>
+              ,
+              <a
+                class="facebook"
+                href="https://web.archive.org/web/20190908101510/https://www.instagram.com/wistia"
+              >
+                Instagram
+              </a>
+            </p>
+          </section>
+          <hr />
+          <section className="footer-navigation">
+            <div>
+              <img className="" src="" alt="" />
 
-//                 <div class="col-md-6 col-lg-3 page-more-info">
-//                     <div class="footer-title">
-//                         <h4>More Info</h4>
-//                     </div>
-//                     <ul>
-//                         <li><a href="#">Lorem ipsum</a></li>
-//                         <li><a href="#">Dolor sit amet</a></li>
-//                         <li><a href="#">Consectetur Adipisicing </a></li>
-//                         <li><a href="#">Ed do eiusmod tempor incididunt</a></li>
-//                     </ul>
-//                 </div>
-//                 <div class="col-md-6 col-lg-4 open-hours">
-//                     <div class="footer-title">
-//                         <h4>Open hours</h4>
-//                         <ul class="footer-social">
-//                             <li><a href="" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-//                             <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-//                             <li><a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-
-//                         </ul>
-//                     </div>
-//                     <table class="table">
-//                         <tbody>
-//                             <tr>
-//                                 <td><i class="far fa-clock"></i>Monday Thursday</td>
-//                                 <td>9:00am - 5:00pm</td>
-//                             </tr>
-//                             <tr>
-//                                 <td><i class="far fa-clock"></i>Friday</td>
-//                                 <td>9:00am - 4:00pm</td>
-//                             </tr>
-//                             <tr>
-//                                 <td><i class="far fa-clock"></i>Sturday</td>
-//                                 <td>9:00am - 1:30pm</td>
-//                             </tr>
-//                             <tr>
-//                                 <td><i class="far fa-clock"></i>Sunday</td>
-//                                 <td>9:30am - 12:00pm</td>
-//                             </tr>
-//                         </tbody>
-//                     </table>
-//                     <hr>
-//                     <div class="footer-logo">
-
-//                     <table>
-//                         <tbody>
-//                             <tr>
-//                                 <td><img src="https://i.ibb.co/vxc577d/dummy-logo3.jpg"></td>
-//                                 <td><img src="https://i.ibb.co/vxc577d/dummy-logo3.jpg"></td>
-//                                 <td><img src="https://i.ibb.co/vxc577d/dummy-logo3.jpg"></td>
-//                                 <td><img src="https://i.ibb.co/vxc577d/dummy-logo3.jpg"></td>
-//                                 <td><img src="https://i.ibb.co/vxc577d/dummy-logo3.jpg"></td>
-//                         </tbody>
-//                     </table>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//         <hr>
-//         <div class="footer-bottom">
-//             <div class="row">
-//                 <div class="col-sm-4">
-//                     <a href="">Privacy policy</a>
-//                 </div>
-//                 <div class="col-sm-8">
-//                     <p>Lorem ipsum dolor sit amet @ 2019 All rights reserved</p>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </footer>
-// )}}
+              <ul>
+                <li>
+                  <h3>WISTIA FOR MARKETING</h3>
+                </li>
+                <li>Features</li>
+                <li>Pricing</li>
+                <li className="create">
+                  <a href="https://web.archive.org/web/20190614235836/https://wistia.com/account/signup">
+                    Create a free account
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="" alt="" />
+              <ul>
+                <li>
+                  <h3>SOAPBOX</h3>
+                </li>
+                <li>Features</li>
+                <li>Pricing</li>
+                <li className="install">
+                  <a href="https://web.archive.org/web/20190617174351/https://chrome.google.com/webstore/detail/lmepjnndgdhcgphilomlfekmgnnmngbi">
+                    Install for free
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <h3>COMPANY</h3>
+                </li>
+                <li>Blog</li>
+                <li>Team</li>
+                <li>Career</li>
+                <li>Values</li>
+                <li>Brand Assets</li>
+                <li>Community</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <h3>Support</h3>
+                </li>
+                <li>Documentation</li>
+                <li>Developers</li>
+                <li>Troubleshooting</li>
+                <li>Status</li>
+                <li>Contact Support</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div className="footer-copyrights">
+          <p>
+            ©2001–2019 All rights reserved.
+            <a href="https://web.archive.org/web/20190614235836/https://wistia.com/privacy">
+              Privacy
+            </a>
+            and
+            <a href="https://web.archive.org/web/20190614235836/https://wistia.com/terms">
+              Terms
+            </a>
+            .
+          </p>
+        </div>
+      </footer>
+    );
+  }
+}

@@ -25,6 +25,7 @@ router.get("/test", (req, res) => res.json({ msg: "application works" }));
 
 router.post("/apply", (req, res) => {
   const {
+    valueAmount,
     totalAmount,
     monthlyInstalement,
     rate,
@@ -33,6 +34,7 @@ router.post("/apply", (req, res) => {
     bankname
   } = req.body;
   const newApplication = new Application({
+    valueAmount,
     totalAmount,
     monthlyInstalement,
     rate,

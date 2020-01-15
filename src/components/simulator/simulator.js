@@ -228,7 +228,6 @@ Kind regards,`
                 amountToRepay: this.state.amountToR,
                 monthlyIn: this.state.monthlyInst
               });
-              this.sendSimulation();
             }}
           >
             SIMULATE !
@@ -236,6 +235,7 @@ Kind regards,`
           <Button
             onClick={() => {
               this.sendMail();
+              this.sendSimulation();
             }}
           >
             Send Request{" "}

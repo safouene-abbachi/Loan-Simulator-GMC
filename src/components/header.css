@@ -13,6 +13,7 @@ nav {
 .lol {
   display: flex;
 }
+
 nav a {
   line-height: 67px;
   height: 100%;
@@ -36,12 +37,15 @@ nav .animation {
 }
 a:nth-child(1) {
   width: 100px;
+  text-decoration: none !important;
 }
 a:nth-child(2) {
   width: 110px;
+  text-decoration: none !important;
 }
 a:nth-child(3) {
   width: 100px;
+  text-decoration: none !important;
 }
 a:nth-child(4) {
   width: 160px;

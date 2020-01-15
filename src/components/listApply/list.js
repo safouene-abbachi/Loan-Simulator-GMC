@@ -74,6 +74,9 @@ Safouene Abbachi`
         {this.state.list.map((el, key) => (
           <div key={key} class="card">
             <div class="card-body">
+              {/* <h5 class="card-title">
+                Total Amount To Repay {el.valueAmount} DT
+              </h5> */}
               <h5 class="card-title">
                 Total Amount To Repay {el.totalAmount} DT
               </h5>

@@ -5,6 +5,7 @@ import "./body.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "../components/login/login";
 import Header from "./header";
+import Footer from "./footer/footer";
 
 export default class body extends Component {
   render() {
@@ -40,6 +41,9 @@ export default class body extends Component {
 
           <Card />
         </div>
+        {/* <div>
+          <Footer />
+        </div> */}
       </div>
     );
   }

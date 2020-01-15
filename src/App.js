@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/header";
 import Body from "./components/body";
 import Simulator from "./components/simulator/simulator";
-import Footer from "./components/footer/footer";
+// import Footer from "./components/footer/footer";
 import Login from "./components/login/login";
 import { PrivateRoute } from "./components/privateRoute";
 import "./App.css";
@@ -21,7 +21,6 @@ function App() {
           <PrivateRoute exact path="/simulator" component={Simulator} />
           <PrivateRoute exact isAdmin path="/admin" component={List} />
         </Switch>
-        {/* <Footer /> */}
       </Router>
     </div>
   );
